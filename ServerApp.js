@@ -2,10 +2,12 @@ const express = require("express");
 
 //const data = require("./db/products.js");
 const products = require("./db/products.js");
+const users = require("./db/users.js")
 const app = express();
 
 const PORT = 5000;
 
+//Products
 
 app.get("/products",(req,res,next) => {
 
@@ -19,6 +21,12 @@ app.get("/products/:id",(req,res,next)=>{
     res.json(prod);
 })
 
+
+//Users
+
+app.get("/users",(req,res,next)=>{
+    res.json(users);
+})
 
 
 app.listen(PORT, () => {
