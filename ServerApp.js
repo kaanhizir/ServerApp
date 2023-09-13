@@ -1,40 +1,27 @@
 const express = require("express");
-
-//const data = require("./db/products.js");
-const products = require("./db/products.js");
-
-const users = require("./db/users.js")
+const productsrouter = require('./routers/products-router.js');
+const usersrouter = require('./routers/users-routers.js');
+const albumrouter = require('./routers/albums-router.js');
 
 const app = express();
 
 const PORT = 5000;
 
+//main
+
+app.get("/",(req,res,next)=>{
+    res.send("MainPage")
+})
+
 
 //Products
-
-
-app.get("/products",(req,res,next) => {
-
-    res.json(products);
-
-});
-
-app.get("/products/:id",(req,res,next)=>{
-    const{id} = req.params;
-    const prod = products.find((prod) => prod.id === parseInt(id));
-    res.json(prod);
-})
-
-
+app.use('/products',productsrouter);
 
 //Users
+app.use('/users',usersrouter);
 
-app.get("/users",(req,res,next)=>{
-    res.json(users);
-})
-
-//
-//Part
+//Albums
+app.use('/albums',albumrouter);
 
 app.listen(PORT, () => {
     console.log("Server Started Port:" + PORT);
