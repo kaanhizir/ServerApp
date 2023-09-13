@@ -9,8 +9,8 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/:id",(req,res,next)=>{
-    const{id} = req.params.id;
-    const user = products.find((user) => user.id === parseInt(id));
+    const{id} = req.params;
+    const user = users.find((user) => user.id === parseInt(id));
     res.json(user);
 
     

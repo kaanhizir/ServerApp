@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const album = require('../db/albums.js');
+const albums = require('../db/albums.js');
 
 
 router.get("/",(req,res)=>{
-    res.json(album);
+    res.json(albums);
 })
 
-router.get("/:id",(req,res,next)=>{
-    const{id} = req.params.id;
-    const album = products.find((album) => album.id === parseInt(id));
+router.get("/:id",(req,res)=>{
+    const{id} = req.params;
+    const album = albums.find((album) => album.id === parseInt(id));
     res.json(album);
 
     
