@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const products = require('../db/products.js');
-
+const bodyParser = require('body-parser');
+const _ = require("underscore");
 
 //const router = express.Router();
 
@@ -15,5 +16,7 @@ router.get("/:id",(req,res)=>{
     const prod = products.find((prod) => prod.id === parseInt(id));
     res.json(prod);
 })
+
+
 
 module.exports = router;

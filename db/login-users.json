@@ -1,0 +1,18 @@
+[{
+
+    "name":"Kaan",
+    "surname":"Hizir",
+    "kullaniciAdi":"admin",
+    "sifre":"123kaan"
+
+},
+
+{
+    "name":"Kaan",
+    "surname":"Hizir",
+    "kullaniciAdi":"test",
+    "sifre":"123kaan"
+}
+
+
+]
