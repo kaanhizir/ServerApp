@@ -9,18 +9,12 @@ router.get("/",(req,res)=>{
 
 //Add İşlemi
 
-
-
-/*
-let next_id = 3;
 router.post("/add",(req,res)=>{
-
     let newAlbum = req.body;
-    
     albums.push(newAlbum);
-    res.status(201).json(newAlbum);
+    res.send("Ekleme İşlemi Gerçekleşti.").end();
 
-})*/
+})
 
 
 
@@ -33,7 +27,7 @@ router.delete("/:id",(req,res)=>{
 
     if(delete_album){
         albums= albums.filter((album) => album.id !==Number(delete_album_id));
-        res.end();
+        res.send("Silme İşlemi Gerçekleşti.").end();
     }
 })
 
@@ -46,10 +40,6 @@ router.get("/:id",(req,res)=>{
 
     
 })
-
-
-
-
 
 
 

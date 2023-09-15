@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
     if (kullaniciAdi === 'admin') {
         // Eğer kullanıcı "admin" ise, özel bir sayfaya yönlendiriyoruz
         
-        res.redirect('/add');
+        res.redirect('/adminPage');
       } else {
         res.send('Başarıyla giriş yaptınız.');
       }
@@ -48,10 +48,12 @@ app.post('/login', (req, res) => {
   });
 
 
-app.post("/add",(req,res)=>{
-    res.send("Post İsteği Gönderildi.")
 
-    
+
+//AdminPage
+
+app.get('/adminPage',(req,res)=>{
+    res.send("Admin Sayfasına Hoşgeldiniz.")
 })
 
 //main

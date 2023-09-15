@@ -11,5 +11,12 @@ module.exports = [
         "Artist":"Eminem",
         "AlbumName":"The Marshall Mathers LP",
         "Year":2000
+    },
+
+    {
+        "id":3,
+        "Artist":"Eminem",
+        "AlbumName":"The Eminem Show",
+        "Year":2002
     }
 ]
