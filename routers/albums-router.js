@@ -7,12 +7,18 @@ router.get("/",(req,res)=>{
     res.json(albums);
 })
 
+
 //Add İşlemi
 
 router.post("/add",(req,res)=>{
+    if (req.user && req.user.kullaniciAdi === 'admin') {
     let newAlbum = req.body;
     albums.push(newAlbum);
     res.send("Ekleme İşlemi Gerçekleşti.").end();
+}
+    else{
+        res.send("Bu İşlem İçin Yetkiniz Yok.");
+    }
 
 })
 
@@ -20,6 +26,7 @@ router.post("/add",(req,res)=>{
 
 //Delete İşlemi
 router.delete("/:id",(req,res)=>{
+    if (req.user && req.user.kullaniciAdi === 'admin') {
     const delete_album_id = req.params.id;
     const delete_album = albums.find(
         (album) => album.id === Number(delete_album_id)
@@ -28,6 +35,10 @@ router.delete("/:id",(req,res)=>{
     if(delete_album){
         albums= albums.filter((album) => album.id !==Number(delete_album_id));
         res.send("Silme İşlemi Gerçekleşti.").end();
+    }
+        }
+    else{
+        res.send("Bu İşlem İçin Yetkiniz Yok.");
     }
 })
 

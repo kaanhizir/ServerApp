@@ -3,7 +3,7 @@ const products = require('../db/products.js');
 const bodyParser = require('body-parser');
 const _ = require("underscore");
 
-//const router = express.Router();
+
 
 router.get("/",(req,res)=>{
 
