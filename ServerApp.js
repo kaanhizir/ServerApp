@@ -135,9 +135,6 @@ app.get('/testPage',(req,res)=>{
 
 //main
 
-app.get("/",(req,res,next)=>{
-    res.send("Giriş Yapmak İçin '/login' yazınız" )
-})
 
 //Ekleme İşleme
 
